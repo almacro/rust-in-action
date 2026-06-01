@@ -1,0 +1,9 @@
+[package]
+name = "resolve"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = "2"
+rand = "0.6"
+trust-dns = { version = "0.16", default-features = false }
