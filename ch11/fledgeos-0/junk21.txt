@@ -1,0 +1,25 @@
+   Compiling fledgeos v0.1.0 (/home/almacro/rust/fledgeos-0)
+warning: the feature `core_intrinsics` is internal to the compiler or standard library
+ --> src/main.rs:3:12
+  |
+3 | #![feature(core_intrinsics)]
+  |            ^^^^^^^^^^^^^^^
+  |
+  = note: using it is strongly discouraged
+  = note: `#[warn(internal_features)]` on by default
+
+error: `#[no_mangle]` cannot be used on internal language items
+  --> src/main.rs:9:1
+   |
+ 9 | #[unsafe(no_mangle)]
+   | ^^^^^^^^^^^^^^^^^^^^
+10 | pub fn panic(_info: &PanicInfo) -> ! {
+   | ------------------------------------ should be the internal language item
+   |
+   = note: Rustc requires this item to have a specific mangled name.
+   = note: If you are trying to prevent mangling to ease debugging, many
+   = note: debuggers support a command such as `rbreak rust_begin_unwind` to
+   = note: match `.*rust_begin_unwind.*` instead of `break rust_begin_unwind` on a specific name
+
+warning: `fledgeos` (bin "fledgeos") generated 1 warning
+error: could not compile `fledgeos` (bin "fledgeos") due to 1 previous error; 1 warning emitted
